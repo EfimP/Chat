@@ -1,7 +1,6 @@
 import http from "node:http";
 import { WebSocketServer } from "ws";
 import express from "express";
-import { createDB, checkDB, saveDB } from "./database.js";
 
 const app = express();
 
@@ -28,12 +27,6 @@ wss.on("connection", (ws) => {
         for (let i of wss.clients) {
            i.send(message.toString());
         }
-        /*
-        if (checkDB() == 0)
-            createDB(buf);
-        else
-            saveDB(buf);    
-        */
     });
 
     if (buf != "") {
