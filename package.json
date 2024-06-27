@@ -1,0 +1,22 @@
+{
+  "name": "0614",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "16": "^0.0.2",
+    "express": "^4.19.2",
+    "jquery": "^3.7.1",
+    "mongodb": "^6.7.0",
+    "ws": "^8.17.1"
+  }
+}

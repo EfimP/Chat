@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" class="notranslate" translate="no">
+    <head>
+        <meta name="google" content="notranslate">    
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="../bin/C.BMP" type="image/BMP" />
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="./index.js" type="module"></script>
+    </head>
+    <body>
+        <h1 id="Header">It is chat on sosockets</h1>
+        <input type="text" id="NewName"><br><br>
+        <textarea id="MsgArea"></textarea><br>
+        <textarea id="NewMsg"></textarea><br>
+        <button id="SendBtn">Отправить</button>
+        <script type="module">
+            import { OnMouseClick } from "./index.js"
+
+            $(document).ready(function () {
+                $("#SendBtn").click(() => {
+                    if ($("#NewName").val() == "")
+                        alert("Please print your name.")
+                    else if ($("#NewMsg").val() == "")
+                        alert("Please print your message.")
+                    else
+                        OnMouseClick($("#NewName").val() + "\n" + $("#NewMsg").val());
+                });
+            
+                let btnHeight = $("#NewMsg").css("height");
+                let btnWidth = $("#NewMsg").css("width");
+
+                $("body").css("background-color", "#BAF");
+                $("#Header").css("margin-left", "45%");
+                $("#MsgArea").css("margin-left", "50%").css("max-height", "500px").css("min-height", "500px").css("max-width", "400px").css("min-width", "400px")
+                .prop( "disabled", true );//.css("display", "flex").css("flex-direction", "column").css("flex-direction", "column-reverse").css("overflow", "scroll").css("overflow", "hidden");
+                $("#NewMsg").css("margin-left", "50%");
+                $("#SendBtn").css("width", btnWidth).css("height", btnHeight).css("margin-left", "50%");
+                $("#NewName").css("margin-left", "50%");
+            });
+        </script>
+        <h3 id="SecretDataField"></h3>
+    </body>
+</html>
