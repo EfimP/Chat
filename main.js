@@ -1,10 +1,13 @@
 import http from "node:http";
 import { WebSocketServer } from "ws";
 import express from "express";
+import morgan from "morgan";
 
 const app = express();
 
 let counter = 0;
+
+app.use(morgan('tiny'))
 
 app.get('/', (req, res, next) => {
     counter = counter + 1;
